@@ -1,0 +1,47 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Share Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Screen Share Hub</h1>
+      <div id="connection-status">No conectado</div>
+    </header>
+
+    <div class="main-content">
+      <div class="controls">
+        <button id="shareScreen" class="btn">Compartir Pantalla</button>
+        <button id="stopSharing" class="btn" disabled>Detener Compartir</button>
+        <button id="blockOthers" class="btn">Bloquear Otros</button>
+        <input type="file" id="fileInput" class="file-input">
+        <button id="sendFile" class="btn">Enviar Archivo</button>
+        <input type="text" id="linkInput" placeholder="Pega un enlace aquí">
+        <button id="sendLink" class="btn">Enviar Link</button>
+      </div>
+
+      <div class="screens-container">
+        <div id="localScreen" class="screen">
+          <video id="localVideo" autoplay muted></video>
+          <div class="screen-label">Tu pantalla</div>
+        </div>
+        <div id="remoteScreens" class="remote-screens">
+          <!-- Remote screens will be added here dynamically -->
+        </div>
+      </div>
+
+      <div class="shared-content">
+        <h3>Contenido Compartido</h3>
+        <div id="sharedLinks" class="shared-links"></div>
+        <div id="sharedFiles" class="shared-files"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
